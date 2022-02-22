@@ -3,25 +3,44 @@ function computerPlay() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-function round(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     
     if (playerSelection === computerSelection) {
-        return"It is a tie!";
+        return 'Tie';
     } else switch (playerSelection)    {
-            case 'rock' :
-                if (computerSelection === 'paper') {
-                    return"You Lose! Paper beats Rock"
-                } else return("You Win! Rock beats Scissors");
-            case 'paper' :
-                if (computerSelection === 'scissors') {
-                    return"You Lose! Scissors beats Paper"
-                } else return"You Win! Paper beats Rock";
-            case 'scissors' :
-                if (computerSelection === 'rock') {
-                    return "You Lose! Rock beats Scissors"
-                } else return"You Win! Scissors beats Paper";
-        }
-    }   
+        case 'rock' :
+            if (computerSelection === 'paper') {
+                return 'Lose';
+            } else return 'Win';
+        case 'paper' :
+            if (computerSelection === 'scissors') {
+                return 'Lose';
+            } else return 'Win';
+        case 'scissors' :
+            if (computerSelection === 'rock') {
+                return 'Lose';
+            } else return 'Win';
+    }
+}   
 
-console.log(round('Rock', computerPlay()))
+function game() {
+    playerScore = 0;
+    computerScore = 0;
+
+    for (let i = 0; i < 5; i ++) {
+        userChoice = prompt("Rock, Paper or Scissors?");
+        gameReport = playRound(userChoice, computerPlay());
+        console.log(gameReport);
+
+        if (gameReport === 'Win') {
+            playerScore += 1;
+        } else if (gameReport === 'Lose') {
+            computerScore += 1;
+        }
+    }
+    console.log(`Player Score: ${playerScore}`);
+    console.log(`Computer Score: ${computerScore}`);
+}
+
+game()
