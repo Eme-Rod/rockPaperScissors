@@ -47,7 +47,16 @@ function showResult(result) {
     displayResult.textContent = result;
     DIVresult.appendChild(displayResult);
 
-    if (turn === 5) {
+    if (totalPlayerScore === 5) {
+        const displayWinner = document.createElement('div');
+        displayWinner.textContent = `YOU WIN!!!`;
+        DIVresult.appendChild(displayWinner);
+
+        endGame();
+    } else if (totalCompScore === 5) {
+        const displayWinner = document.createElement('div');
+        displayWinner.textContent = `YOU LOSE!`;
+        DIVresult.appendChild(displayWinner);
         endGame();
     }
 }
@@ -70,6 +79,6 @@ btn_paper = document.querySelector('#btn-paper');
 btn_scissors = document.querySelector('#btn-scissors');
 DIVresult = document.querySelector('#result');
 
-btn_rock.addEventListener('click', () => playRound('rock', 'paper'));
-btn_paper.addEventListener('click', () => playRound('paper', 'scissors'));
+btn_rock.addEventListener('click', () => playRound('rock', computerPlay()));
+btn_paper.addEventListener('click', () => playRound('paper', computerPlay()));
 btn_scissors.addEventListener('click', () => playRound('scissors', computerPlay()));

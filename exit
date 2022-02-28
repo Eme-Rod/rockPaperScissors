@@ -1,0 +1,41 @@
+[33mcommit 6c808acdc7df5924fc97eb40417c28b044cd0a1e[m[33m ([m[1;36mHEAD -> [m[1;32mrps-ui[m[33m, [m[1;31morigin/rps-ui[m[33m)[m
+Author: Rodrigo <rodrigo070duarte@gmail.com>
+Date:   Mon Feb 28 08:56:48 2022 -0300
+
+    js part done
+
+[33mcommit f494d1b3d8ef3c729bf78ff5ee007ab9441686a7[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Rodrigo <rodrigo070duarte@gmail.com>
+Date:   Sun Feb 27 12:37:36 2022 -0300
+
+    js for the game is working as it should
+
+[33mcommit 776275096ff04eb56f881860f8f0b2adf3da09b4[m
+Author: Rodrigo <rodrigo070duarte@gmail.com>
+Date:   Sun Feb 27 11:08:10 2022 -0300
+
+    started DOM Methods
+
+[33mcommit 2cf0d8a83531fc9eb2f3dd99346ed8ac7cc3a513[m
+Author: Rodrigo <rodrigo070duarte@gmail.com>
+Date:   Mon Feb 21 23:02:45 2022 -0300
+
+    I think I finished
+
+[33mcommit df9961a54cf93577347900ec32643c7c9a0abf8e[m
+Author: Rodrigo <rodrigo070duarte@gmail.com>
+Date:   Mon Feb 21 22:09:33 2022 -0300
+
+    pulish
+
+[33mcommit 49db597ec6c5ac91644b5f902e954e41f72f8e81[m
+Author: Rodrigo <rodrigo070duarte@gmail.com>
+Date:   Mon Feb 21 21:29:08 2022 -0300
+
+    done with the computer choice and the round function
+
+[33mcommit 0b56dc06ef26909fc15eb56f9f5a43373b1acf57[m
+Author: Eme-Rod <75046565+Eme-Rod@users.noreply.github.com>
+Date:   Mon Feb 21 20:30:46 2022 -0300
+
+    Initial commit
