@@ -1,2 +1,2 @@
-# rockPaperScissors
-My first js project, a simple rock paper scissors game.
+# Rock Paper Scissors Game
+This is my first JS project.
