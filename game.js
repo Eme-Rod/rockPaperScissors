@@ -51,7 +51,6 @@ function showResult(result) {
         const displayWinner = document.createElement('div');
         displayWinner.textContent = `YOU WIN!!!`;
         DIVresult.appendChild(displayWinner);
-
         endGame();
     } else if (totalCompScore === 5) {
         const displayWinner = document.createElement('div');
