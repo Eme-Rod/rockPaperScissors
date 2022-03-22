@@ -37,16 +37,22 @@ function playRound(playerChoice, computerChoice) {
 }
 
 function showResult(result) {
-    // In the case that is either 'win' or 'lose', increase the respective total score
-    if (result === 'win') {
-        totalPlayerScore += + 1;
-    } else if (result ==='lose') {
-        totalCompScore += 1;
+    switch(result) {
+        case "tie" :
+            const tieScore = document.querySelector("#tiePoints");
+            tieScore.textContent = tieScore.textContent + "*";
+            break;
+        case "win" :
+            totalPlayerScore += + 1;
+            const winScore = document.querySelector("#playerPoints");
+            winScore.textContent = winScore.textContent + "*";
+            break;
+        case "lose" :
+            totalCompScore += 1;
+            const loseScore = document.querySelector("#computerPoints");
+            loseScore.textContent = loseScore.textContent + "*";
+            break;
     }
-
-    const displayResult = document.createElement('div');
-    displayResult.textContent = result;
-    DIVresult.appendChild(displayResult);
 
     // Once one of the players reach 5, display a message and end the game
     if (totalPlayerScore === 5) {
