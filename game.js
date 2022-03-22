@@ -37,6 +37,7 @@ function playRound(playerChoice, computerChoice) {
 }
 
 function showResult(result) {
+    // In the case that is either 'win' or 'lose', increase the respective total score
     if (result === 'win') {
         totalPlayerScore += + 1;
     } else if (result ==='lose') {
@@ -47,6 +48,7 @@ function showResult(result) {
     displayResult.textContent = result;
     DIVresult.appendChild(displayResult);
 
+    // Once one of the players reach 5, display a message and end the game
     if (totalPlayerScore === 5) {
         const displayWinner = document.createElement('div');
         displayWinner.textContent = `YOU WIN!!!`;
@@ -60,6 +62,7 @@ function showResult(result) {
     }
 }
 
+// This function display the final score and disable the buttons for rock, paper, scissors
 function endGame() {
     const displayEnd = document.createElement('div');
     displayEnd.textContent = `Final Score: ${totalPlayerScore} - ${totalCompScore}`;
