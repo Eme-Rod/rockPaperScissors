@@ -1,3 +1,28 @@
+// Function to set everything to their default value
+function reset() {
+    turn = 0;
+    totalPlayerScore = 0;
+    totalCompScore = 0;
+
+    const tieScore = document.querySelector("#tiePoints");
+    tieScore.textContent = "";
+    const winScore = document.querySelector("#playerPoints");
+    winScore.textContent = "";
+    const loseScore = document.querySelector("#computerPoints");
+    loseScore.textContent = "";
+    DIVresult.textContent = "";
+
+}
+
+function quantity(num) {
+    btn_1.disabled = true;
+    btn_3.disabled = true;
+    btn_5.disabled = true;
+    btn_7.disabled = true;
+
+    chosenNum = parseInt(num);
+}
+
 // this function selects a random choice for the computer
 function computerPlay() {
     choices = ['rock', 'paper', 'scissors'];
@@ -54,16 +79,16 @@ function showResult(result) {
             break;
     }
 
-    // Once one of the players reach 5, display a message and end the game
-    if (totalPlayerScore === 5) {
-        const displayWinner = document.createElement('div');
-        displayWinner.textContent = `YOU WIN!!!`;
-        DIVresult.appendChild(displayWinner);
+    // Once one of the players reach the chosen number to win, display a message and end the game
+    if (totalPlayerScore === chosenNum) {
+        const displayResultMessage = document.createElement('div');
+        displayResultMessage.textContent = `YOU WIN!!!`;
+        DIVresult.appendChild(displayResultMessage);
         endGame();
-    } else if (totalCompScore === 5) {
-        const displayWinner = document.createElement('div');
-        displayWinner.textContent = `YOU LOSE!`;
-        DIVresult.appendChild(displayWinner);
+    } else if (totalCompScore === chosenNum) {
+        const displayResultMessage = document.createElement('div');
+        displayResultMessage.textContent = `YOU LOSE!`;
+        DIVresult.appendChild(displayResultMessage);
         endGame();
     }
 }
@@ -73,20 +98,40 @@ function endGame() {
     const displayEnd = document.createElement('div');
     displayEnd.textContent = `Final Score: ${totalPlayerScore} - ${totalCompScore}`;
     const buttonDisable = document.querySelectorAll('button');
-    buttonDisable.forEach(btn => btn.disabled = true);
+    buttonDisable.forEach(btn => {
+        // Disable all buttons except reset
+        if (!(btn.getAttribute('id') === 'btn-reset')) btn.disabled = true;
+    });
 
     DIVresult.appendChild(displayEnd);
+    const body = document.querySelector('body');
+    body.appendChild(DIVresult);
 }
 
 let turn = 0;
 let totalPlayerScore = 0;
 let totalCompScore = 0;
+let chosenNum = 0;
 
-btn_rock = document.querySelector('#btn-rock');
-btn_paper = document.querySelector('#btn-paper');
-btn_scissors = document.querySelector('#btn-scissors');
-DIVresult = document.querySelector('#result');
+const DIVresult = document.createElement('div');
+DIVresult.setAttribute('id', 'result');
 
+const btn_rock = document.querySelector('#btn-rock');
+const btn_paper = document.querySelector('#btn-paper');
+const btn_scissors = document.querySelector('#btn-scissors');
+const btn_reset = document.querySelector('#btn-reset');
+
+const btn_1 = document.querySelector('#btn-1');
+const btn_3 = document.querySelector('#btn-3');
+const btn_5 = document.querySelector('#btn-5');
+const btn_7 = document.querySelector('#btn-7');
+
+btn_1.addEventListener('click', () => quantity('1'));
+btn_3.addEventListener('click', () => quantity('3'));
+btn_5.addEventListener('click', () => quantity('5'));
+btn_7.addEventListener('click', () => quantity('7'));
+
+btn_reset.addEventListener('click', () => reset());
 btn_rock.addEventListener('click', () => playRound('rock', computerPlay()));
 btn_paper.addEventListener('click', () => playRound('paper', computerPlay()));
 btn_scissors.addEventListener('click', () => playRound('scissors', computerPlay()));
