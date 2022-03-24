@@ -12,6 +12,9 @@ function reset() {
     loseScore.textContent = "";
     DIVresult.textContent = "";
 
+    const buttonEnable = document.querySelectorAll('button');
+    buttonEnable.forEach(btn => btn.disabled = false);
+    
 }
 
 function quantity(num) {
