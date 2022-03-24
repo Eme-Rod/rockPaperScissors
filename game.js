@@ -23,6 +23,14 @@ function quantity(num) {
     btn_5.disabled = true;
     btn_7.disabled = true;
 
+    const attempts_btns = document.querySelectorAll('.btn-numbers');
+    
+    attempts_btns.forEach(btn => {
+        if (!(btn.id === `btn-${num}`)) {
+            btn.remove();
+        }
+    })
+
     chosenNum = parseInt(num);
 }
 
