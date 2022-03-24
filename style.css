@@ -1,3 +1,62 @@
 body {
   background-color: #28947f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 50px;
+  font-family: system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  user-select: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  transition: all 250ms;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  font-family: system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+button:hover,
+button:focus {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+#btn-reset {
+  background-color: #ff8f1c;
+  margin: 0;
+  padding: 10px 20px;
+  font-size: large;
+  color: #ffff;
+}
+
+#btn-reset:active {
+  background-color: #df5916;
+}
+
+#attempts {
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  gap: 15px;
+}
+
+.btn-numbers {
+  font-size: 1.5rem;
+  padding: 5px 10px;
 }

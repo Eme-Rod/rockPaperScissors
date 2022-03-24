@@ -7,27 +7,33 @@
     <title>Rock Paper Scissors</title>
     <script src="game.js" defer></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,700;1,100&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <button id="btn-reset">Reset</button>
 
     <div id="attempts">
       Win when reach
-      <button id="btn-1">1</button>
-      <button id="btn-3">3</button>
-      <button id="btn-5">5</button>
-      <button id="btn-7">7</button>
-    </div>
-
-    <div id="tie">
-      <p>Tie</p>
-      <div id="tiePoints"></div>
+      <button id="btn-1" class="btn-numbers">1</button>
+      <button id="btn-3" class="btn-numbers">3</button>
+      <button id="btn-5" class="btn-numbers">5</button>
+      <button id="btn-7" class="btn-numbers">7</button>
     </div>
 
     <div class="score">
       <div id="player">
         <p>Player Score</p>
         <div id="playerPoints"></div>
+      </div>
+
+      <div id="tie">
+        <p>Tie</p>
+        <div id="tiePoints"></div>
       </div>
 
       <div id="computer">
