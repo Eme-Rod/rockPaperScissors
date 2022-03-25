@@ -4,12 +4,9 @@ function reset() {
     totalPlayerScore = 0;
     totalCompScore = 0;
 
-    const tieScore = document.querySelector("#tiePoints");
     tieScore.textContent = "";
-    const winScore = document.querySelector("#playerPoints");
-    winScore.textContent = "";
-    const loseScore = document.querySelector("#computerPoints");
-    loseScore.textContent = "";
+    playerPoints.textContent = "";
+    computerPoints.textContent = "";
     DIVresult.textContent = "";
 
     const current_btn = document.querySelectorAll('.btn-numbers');
@@ -36,6 +33,13 @@ function quantity(num) {
             btn.remove();
         }
     })
+
+    for (let i = 0; i < num; i++) {
+        const divElement1 = document.createElement("div");
+        const divElement2 = document.createElement("div");
+        playerPoints.appendChild(divElement1);
+        computerPoints.appendChild(divElement2);
+    }
 
     chosenNum = parseInt(num);
 }
@@ -81,18 +85,15 @@ function playRound(playerChoice, computerChoice) {
 function showResult(result) {
     switch(result) {
         case "tie" :
-            const tieScore = document.querySelector("#tiePoints");
             tieScore.textContent = tieScore.textContent + "*";
             break;
         case "win" :
             totalPlayerScore += + 1;
-            const winScore = document.querySelector("#playerPoints");
-            winScore.textContent = winScore.textContent + "*";
+            playerPoints.textContent = playerPoints.textContent + "*";
             break;
         case "lose" :
             totalCompScore += 1;
-            const loseScore = document.querySelector("#computerPoints");
-            loseScore.textContent = loseScore.textContent + "*";
+            computerPoints.textContent = computerPoints.textContent + "*";
             break;
     }
 
@@ -128,7 +129,7 @@ function endGame() {
 let turn = 0;
 let totalPlayerScore = 0;
 let totalCompScore = 0;
-let chosenNum = 0;
+let chosenNum = 1;
 
 const DIVresult = document.createElement('div');
 DIVresult.setAttribute('id', 'result');
@@ -138,6 +139,10 @@ const btn_paper = document.querySelector('#btn-paper');
 const btn_scissors = document.querySelector('#btn-scissors');
 const btn_reset = document.querySelector('#btn-reset');
 const buttonEnable = document.querySelectorAll('button');
+
+const computerPoints = document.querySelector("#computerPoints");
+const playerPoints = document.querySelector("#playerPoints");
+const tieScore = document.querySelector("#tiePoints");
 
 const attempts_btns = document.querySelectorAll('.btn-numbers');
 const btn_1 = document.querySelector('#btn-1');

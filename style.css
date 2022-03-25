@@ -59,12 +59,29 @@ button:active {
 .btn-numbers {
   font-size: 1.5rem;
   padding: 5px 10px;
+  background-color: #f87a63;
+  color: #ffff;
 }
 
 .btn-numbers:active {
-  background-color: yellow;
+  background-color: #d32e05;
 }
 
 p {
+  margin: 0;
+}
+
+#score {
+  display: flex;
+  gap: 20px;
+}
+
+#playerPoints,
+#computerPoints {
+  border: 1px solid black;
+}
+
+#playerPoints > div {
+  padding: 0;
   margin: 0;
 }
