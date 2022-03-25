@@ -4,7 +4,7 @@ function reset() {
     totalPlayerScore = 0;
     totalCompScore = 0;
 
-    tieScore.textContent = "";
+    tiePoints.textContent = "";
     playerPoints.textContent = "";
     computerPoints.textContent = "";
     DIVresult.textContent = "";
@@ -85,7 +85,8 @@ function playRound(playerChoice, computerChoice) {
 function showResult(result) {
     switch(result) {
         case "tie" :
-            tieScore.textContent = tieScore.textContent + "*";
+            totalTie += 1;
+            tiePoints.textContent = `${totalTie}`
             break;
         case "win" :
             totalPlayerScore += + 1;
@@ -129,6 +130,7 @@ function endGame() {
 let turn = 0;
 let totalPlayerScore = 0;
 let totalCompScore = 0;
+let totalTie = 0;
 let chosenNum = 1;
 
 const DIVresult = document.createElement('div');
@@ -142,7 +144,7 @@ const buttonEnable = document.querySelectorAll('button');
 
 const computerPoints = document.querySelector("#computerPoints");
 const playerPoints = document.querySelector("#playerPoints");
-const tieScore = document.querySelector("#tiePoints");
+const tiePoints = document.querySelector("#tiePoints");
 
 const attempts_btns = document.querySelectorAll('.btn-numbers');
 const btn_1 = document.querySelector('#btn-1');
