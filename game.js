@@ -12,9 +12,17 @@ function reset() {
     loseScore.textContent = "";
     DIVresult.textContent = "";
 
-    const buttonEnable = document.querySelectorAll('button');
+    const current_btn = document.querySelectorAll('.btn-numbers');
+    if (current_btn.length === 1) {
+        current_btn[0].remove();
+
+        attempts = document.querySelector('#attempts');
+        for (let i = 0; i < 4; i++) {
+            attempts.appendChild(attempts_btns[i]);
+        }
+    }
+
     buttonEnable.forEach(btn => btn.disabled = false);
-    
 }
 
 function quantity(num) {
@@ -22,8 +30,6 @@ function quantity(num) {
     btn_3.disabled = true;
     btn_5.disabled = true;
     btn_7.disabled = true;
-
-    const attempts_btns = document.querySelectorAll('.btn-numbers');
     
     attempts_btns.forEach(btn => {
         if (!(btn.id === `btn-${num}`)) {
@@ -108,8 +114,8 @@ function showResult(result) {
 function endGame() {
     const displayEnd = document.createElement('div');
     displayEnd.textContent = `Final Score: ${totalPlayerScore} - ${totalCompScore}`;
-    const buttonDisable = document.querySelectorAll('button');
-    buttonDisable.forEach(btn => {
+    const buttonEnable = document.querySelectorAll('button');
+    buttonEnable.forEach(btn => {
         // Disable all buttons except reset
         if (!(btn.getAttribute('id') === 'btn-reset')) btn.disabled = true;
     });
@@ -131,7 +137,9 @@ const btn_rock = document.querySelector('#btn-rock');
 const btn_paper = document.querySelector('#btn-paper');
 const btn_scissors = document.querySelector('#btn-scissors');
 const btn_reset = document.querySelector('#btn-reset');
+const buttonEnable = document.querySelectorAll('button');
 
+const attempts_btns = document.querySelectorAll('.btn-numbers');
 const btn_1 = document.querySelector('#btn-1');
 const btn_3 = document.querySelector('#btn-3');
 const btn_5 = document.querySelector('#btn-5');
