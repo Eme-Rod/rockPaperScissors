@@ -5,7 +5,8 @@ body {
   align-items: center;
   gap: 30px;
   padding-top: 50px;
-  font-family: system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Ubuntu", sans-serif;
+  color: #081c15;
 }
 
 * {
@@ -19,8 +20,9 @@ button {
   transition: all 250ms;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  font-family: system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 700;
+  color: #081c15;
 }
 
 button:hover,
@@ -37,6 +39,7 @@ button:active {
   transform: translateY(0);
 }
 
+/* reset buton */
 #btn-reset {
   background-color: #ff8f1c;
   margin: 0;
@@ -49,6 +52,7 @@ button:active {
   background-color: #df5916;
 }
 
+/* attempts buttons */
 #attempts {
   font-size: 2rem;
   font-weight: 700;
@@ -71,17 +75,41 @@ p {
   margin: 0;
 }
 
+/* score */
 #score {
   display: flex;
-  gap: 20px;
+  gap: 2rem;
 }
 
-#playerPoints,
-#computerPoints {
-  border: 1px solid black;
+#player > p,
+#tie > p,
+#computer > p,
+#tiePoints {
+  font-weight: 700;
+  font-size: 1.8rem;
 }
 
-#playerPoints > div {
-  padding: 0;
-  margin: 0;
+#player > p {
+  color: #bfdbf7;
+}
+
+#computer > p {
+  color: #ffcad4;
+}
+
+#tie > p {
+  color: #ffee99;
+}
+
+#tiePoints {
+  margin-top: 0.1rem;
+  color: #ffff;
+}
+
+#player,
+#tie,
+#computer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -3,6 +3,8 @@ function reset() {
     turn = 0;
     totalPlayerScore = 0;
     totalCompScore = 0;
+    totalTie = 0;
+    chosenNum = 1;
 
     tiePoints.textContent = "";
     playerPoints.textContent = "";
@@ -19,10 +21,12 @@ function reset() {
         }
     }
     
+    tiePoints.textContent = "0"
     loadImg()
 
     buttonEnable.forEach(btn => btn.disabled = false);
 }
+
 // Function to create 1 empty circle for computer and player score
 function loadImg() {
     const imgElement1 = document.createElement("img");
@@ -102,16 +106,17 @@ function showResult(result) {
     switch(result) {
         case "tie" :
             totalTie += 1;
-            tiePoints.textContent = `${totalTie}`
+            tiePoints.textContent = `${totalTie}`;
             break;
         case "win" :
-            playerPoints.childNodes[totalPlayerScore].setAttribute('src', '/resources/x-circle-svgrepo-com.svg')
+            playerPoints.childNodes[totalPlayerScore].setAttribute('class', 'x-circle');
+            playerPoints.childNodes[totalPlayerScore].setAttribute('src', '/resources/x-circle-svgrepo-com.svg');
             totalPlayerScore += + 1;
-            console.log(totalPlayerScore)
             break;
         case "lose" :
+            computerPoints.childNodes[totalCompScore].setAttribute('class', 'x-circle');
+            computerPoints.childNodes[totalCompScore].setAttribute('src', '/resources/x-circle-svgrepo-com.svg');
             totalCompScore += 1;
-            computerPoints.textContent = computerPoints.textContent + "*";
             break;
     }
 
@@ -163,6 +168,7 @@ const computerPoints = document.querySelector("#computerPoints");
 const playerPoints = document.querySelector("#playerPoints");
 const tiePoints = document.querySelector("#tiePoints");
 
+tiePoints.textContent = "0"
 loadImg()
 
 const attempts_btns = document.querySelectorAll('.btn-numbers');
