@@ -19,14 +19,20 @@ function reset() {
         }
     }
     
+    loadImg()
+
+    buttonEnable.forEach(btn => btn.disabled = false);
+}
+// Function to create 1 empty circle for computer and player score
+function loadImg() {
     const imgElement1 = document.createElement("img");
+    imgElement1.setAttribute('class', 'empty-circle')
     imgElement1.setAttribute('src', '/resources/circle-svgrepo-com.svg')
     const imgElement2 = document.createElement("img");
+    imgElement2.setAttribute('class', 'empty-circle')
     imgElement2.setAttribute('src', '/resources/circle-svgrepo-com.svg')
     playerPoints.appendChild(imgElement1);
     computerPoints.appendChild(imgElement2);
-
-    buttonEnable.forEach(btn => btn.disabled = false);
 }
 
 function quantity(num) {
@@ -44,16 +50,12 @@ function quantity(num) {
     if (!(num === 1)) {
         const empty_circle = document.querySelectorAll('.empty-circle');
         empty_circle.forEach(circle => circle.remove())
-    }
+        
+        for (let i = 0; i < num; i++) {
+        loadImg()
+    }}
 
-    for (let i = 0; i < num; i++) {
-        const imgElement1 = document.createElement("img");
-        imgElement1.setAttribute('src', '/resources/circle-svgrepo-com.svg')
-        const imgElement2 = document.createElement("img");
-        imgElement2.setAttribute('src', '/resources/circle-svgrepo-com.svg')
-        playerPoints.appendChild(imgElement1);
-        computerPoints.appendChild(imgElement2);
-    }
+    
 
     chosenNum = parseInt(num);
 }
@@ -103,8 +105,9 @@ function showResult(result) {
             tiePoints.textContent = `${totalTie}`
             break;
         case "win" :
+            playerPoints.childNodes[totalPlayerScore].setAttribute('src', '/resources/x-circle-svgrepo-com.svg')
             totalPlayerScore += + 1;
-            playerPoints.textContent = playerPoints.textContent + "*";
+            console.log(totalPlayerScore)
             break;
         case "lose" :
             totalCompScore += 1;
@@ -159,6 +162,8 @@ const buttonEnable = document.querySelectorAll('button');
 const computerPoints = document.querySelector("#computerPoints");
 const playerPoints = document.querySelector("#playerPoints");
 const tiePoints = document.querySelector("#tiePoints");
+
+loadImg()
 
 const attempts_btns = document.querySelectorAll('.btn-numbers');
 const btn_1 = document.querySelector('#btn-1');
