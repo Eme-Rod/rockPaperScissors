@@ -18,6 +18,13 @@ function reset() {
             attempts.appendChild(attempts_btns[i]);
         }
     }
+    
+    const imgElement1 = document.createElement("img");
+    imgElement1.setAttribute('src', '/resources/circle-svgrepo-com.svg')
+    const imgElement2 = document.createElement("img");
+    imgElement2.setAttribute('src', '/resources/circle-svgrepo-com.svg')
+    playerPoints.appendChild(imgElement1);
+    computerPoints.appendChild(imgElement2);
 
     buttonEnable.forEach(btn => btn.disabled = false);
 }
@@ -34,11 +41,18 @@ function quantity(num) {
         }
     })
 
+    if (!(num === 1)) {
+        const empty_circle = document.querySelectorAll('.empty-circle');
+        empty_circle.forEach(circle => circle.remove())
+    }
+
     for (let i = 0; i < num; i++) {
-        const divElement1 = document.createElement("div");
-        const divElement2 = document.createElement("div");
-        playerPoints.appendChild(divElement1);
-        computerPoints.appendChild(divElement2);
+        const imgElement1 = document.createElement("img");
+        imgElement1.setAttribute('src', '/resources/circle-svgrepo-com.svg')
+        const imgElement2 = document.createElement("img");
+        imgElement2.setAttribute('src', '/resources/circle-svgrepo-com.svg')
+        playerPoints.appendChild(imgElement1);
+        computerPoints.appendChild(imgElement2);
     }
 
     chosenNum = parseInt(num);
