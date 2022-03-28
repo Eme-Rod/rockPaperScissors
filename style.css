@@ -130,6 +130,8 @@ div {
 /* options */
 #options {
   display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 #btn-rock,
 #btn-paper,
@@ -142,5 +144,14 @@ div {
 #btn-paper > img,
 #btn-scissors > img {
   height: auto;
-  width: 10rem;
+  width: 8rem;
+}
+
+#btn-rock:hover,
+#btn-rock:focus,
+#btn-paper:hover,
+#btn-paper:focus,
+#btn-scissors:hover,
+#btn-scissors:focus {
+  box-shadow: none;
 }
