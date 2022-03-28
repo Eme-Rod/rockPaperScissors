@@ -33,10 +33,10 @@ function reset() {
 function loadImg() {
     const imgElement1 = document.createElement("img");
     imgElement1.setAttribute('class', 'empty-circle')
-    imgElement1.setAttribute('src', '/resources/circle-svgrepo-com.svg')
+    imgElement1.setAttribute('src', './resources/circle-svgrepo-com.svg')
     const imgElement2 = document.createElement("img");
     imgElement2.setAttribute('class', 'empty-circle')
-    imgElement2.setAttribute('src', '/resources/circle-svgrepo-com.svg')
+    imgElement2.setAttribute('src', './resources/circle-svgrepo-com.svg')
     playerPoints.appendChild(imgElement1);
     computerPoints.appendChild(imgElement2);
 }
@@ -112,12 +112,12 @@ function showResult(result) {
             break;
         case "win" :
             playerPoints.childNodes[totalPlayerScore].setAttribute('class', 'x-circle');
-            playerPoints.childNodes[totalPlayerScore].setAttribute('src', '/resources/x-circle-svgrepo-com.svg');
+            playerPoints.childNodes[totalPlayerScore].setAttribute('src', './resources/x-circle-svgrepo-com.svg');
             totalPlayerScore += + 1;
             break;
         case "lose" :
             computerPoints.childNodes[totalCompScore].setAttribute('class', 'x-circle');
-            computerPoints.childNodes[totalCompScore].setAttribute('src', '/resources/x-circle-svgrepo-com.svg');
+            computerPoints.childNodes[totalCompScore].setAttribute('src', './resources/x-circle-svgrepo-com.svg');
             totalCompScore += 1;
             break;
     }
@@ -125,7 +125,7 @@ function showResult(result) {
     // Once one of the players reach the chosen number to win, display a message and end the game
     const winnerCrown = document.createElement('img');
     winnerCrown.setAttribute('id', 'crown')
-    winnerCrown.setAttribute('src', '/resources/crown-svgrepo-com.svg')
+    winnerCrown.setAttribute('src', './resources/crown-svgrepo-com.svg')
     if (totalPlayerScore === chosenNum) {
         player.prepend(winnerCrown);
 
