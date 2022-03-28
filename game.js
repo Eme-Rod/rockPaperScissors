@@ -20,7 +20,9 @@ function reset() {
             attempts.appendChild(attempts_btns[i]);
         }
     }
-    
+
+    if (!(document.querySelector('#crown') === null)) document.querySelector('#crown').remove();
+
     tiePoints.textContent = "0"
     loadImg()
 
@@ -121,12 +123,20 @@ function showResult(result) {
     }
 
     // Once one of the players reach the chosen number to win, display a message and end the game
+    const winnerCrown = document.createElement('img');
+    winnerCrown.setAttribute('id', 'crown')
+    winnerCrown.setAttribute('src', '/resources/crown-svgrepo-com.svg')
     if (totalPlayerScore === chosenNum) {
+        player.prepend(winnerCrown);
+
         const displayResultMessage = document.createElement('div');
         displayResultMessage.textContent = `YOU WIN!!!`;
         DIVresult.appendChild(displayResultMessage);
         endGame();
     } else if (totalCompScore === chosenNum) {
+        const computer = document.querySelector('#computer');
+        computer.prepend(winnerCrown);
+
         const displayResultMessage = document.createElement('div');
         displayResultMessage.textContent = `YOU LOSE!`;
         DIVresult.appendChild(displayResultMessage);
@@ -164,6 +174,8 @@ const btn_scissors = document.querySelector('#btn-scissors');
 const btn_reset = document.querySelector('#btn-reset');
 const buttonEnable = document.querySelectorAll('button');
 
+const player = document.querySelector('#player');
+const computer = document.querySelector('#computer');
 const computerPoints = document.querySelector("#computerPoints");
 const playerPoints = document.querySelector("#playerPoints");
 const tiePoints = document.querySelector("#tiePoints");

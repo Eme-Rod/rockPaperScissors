@@ -71,39 +71,46 @@ button:active {
   background-color: #d32e05;
 }
 
-p {
+div {
   margin: 0;
 }
 
 /* score */
 #score {
   display: flex;
+  margin-top: 1rem;
   gap: 2rem;
 }
 
-#player > p,
-#tie > p,
-#computer > p,
+#player > div,
+#tie > div,
+#computer > div,
 #tiePoints {
   font-weight: 700;
   font-size: 1.8rem;
 }
 
-#player > p {
+#player > div {
   color: #bfdbf7;
 }
 
-#computer > p {
+#computer > div {
   color: #ffcad4;
 }
 
-#tie > p {
+#tie > div {
   color: #ffee99;
 }
 
 #tiePoints {
   margin-top: 0.1rem;
   color: #ffff;
+}
+
+.empty-circle,
+.x-circle {
+  height: auto;
+  width: 2.3rem;
 }
 
 #player,
