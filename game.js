@@ -6,7 +6,7 @@ function reset() {
     totalTie = 0;
     chosenNum = 1;
 
-    tiePoints.textContent = "";
+    tiePoints.textContent = "0";
     playerPoints.textContent = "";
     computerPoints.textContent = "";
     DIVresult.textContent = "";
@@ -21,9 +21,9 @@ function reset() {
         }
     }
 
+    // if #crown exists, delete it
     if (!(document.querySelector('#crown') === null)) document.querySelector('#crown').remove();
 
-    tiePoints.textContent = "0"
     loadImg()
 
     buttonEnable.forEach(btn => btn.disabled = false);

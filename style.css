@@ -78,7 +78,7 @@ div {
 /* score */
 #score {
   display: flex;
-  margin-top: 1rem;
+  height: 8rem;
   gap: 2rem;
 }
 
@@ -87,7 +87,7 @@ div {
 #computer > div,
 #tiePoints {
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 #player > div {
@@ -119,4 +119,28 @@ div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
+}
+
+#crown {
+  height: auto;
+  width: 3rem;
+}
+
+/* options */
+#options {
+  display: flex;
+}
+#btn-rock,
+#btn-paper,
+#btn-scissors {
+  border-radius: 30%;
+  background-color: transparent;
+}
+
+#btn-rock > img,
+#btn-paper > img,
+#btn-scissors > img {
+  height: auto;
+  width: 10rem;
 }
