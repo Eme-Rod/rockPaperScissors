@@ -1,5 +1,6 @@
 # Rock Paper Scissors Game
-This is my first JS project. You can try to win in a rock, paper, scissors game against the computer!
+This is my first JS project.
+You can try to win in a rock, paper, scissors game against the computer!
 [Try it here](https://eme-rod.github.io/rockPaperScissors/) :point_left:
 
 Credits:
