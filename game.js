@@ -147,7 +147,7 @@ function showResult(result) {
 // This function display the final score and disable the buttons for rock, paper, scissors
 function endGame() {
     const displayEnd = document.createElement('div');
-    displayEnd.textContent = `Final Score: ${totalPlayerScore} - ${totalCompScore}`;
+    displayEnd.textContent = `${totalPlayerScore} - ${totalCompScore}`;
     const buttonEnable = document.querySelectorAll('button');
     buttonEnable.forEach(btn => {
         // Disable all buttons except reset

@@ -4,9 +4,11 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding-top: 50px;
+  padding: 50px 0 0 0;
+  margin: 0;
   font-family: "Ubuntu", sans-serif;
   color: #081c15;
+  height: 100vh;
 }
 
 * {
@@ -154,4 +156,22 @@ div {
 #btn-scissors:hover,
 #btn-scissors:focus {
   box-shadow: none;
+}
+
+/* message when game ends */
+#result {
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#result > div:nth-child(1) {
+  color: #ffd700;
+  font-size: 3rem;
+}
+
+#result > div:nth-child(2) {
+  color: #003f8f;
+  font-size: 3rem;
 }
